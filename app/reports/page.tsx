@@ -381,7 +381,7 @@ const Reports = () => {
             </div>
 
             {/*  Benchmarking Tool */}
-            <div className="p-4 border border-gray-200 rounded-lg w-full flex-col flex xl:flex-row justify-between bg-white xl:max-h-[366px] lg:overflow-y-hidden max-lg:gap-4">
+            <div className="p-4 border border-gray-200 rounded-lg w-full flex-col flex lg:flex-col items-center xl:items-stretch xl:flex-row justify-center xl:justify-between bg-white xl:max-h-[366px] lg:overflow-y-hidden max-lg:gap-4">
               <div className="lg:max-w-[321px] w-full">
                 <h5 className="text-[15px] text-[#171725] font-[600] leading-[133%] flex-1">
                   Benchmarking Tool
@@ -661,8 +661,8 @@ const Reports = () => {
                   Scenario Analysis
                 </h5>
               </div>
-              <div className="flex flex-wrap w-full">
-                <div className="lg:max-w-[540px] w-full flex gap-2 flex-wrap mt-6">
+              <div className="flex flex-wrap max-lg:flex-col-reverse lg w-full">
+                <div className="lg:max-w-[540px] w-full flex gap-2 sm:justify-center lg:justify-start flex-wrap mt-6">
                   {scenarioAnalysis.map((data, index) => (
                     <AnalysisCard
                       data={data}
@@ -671,7 +671,7 @@ const Reports = () => {
                     />
                   ))}
                 </div>
-                <div className="max-w-[370px] w-full mt-6">
+                <div className="max-w-[370px] mx-auto w-full mt-6">
                   <RangeSliders />
                 </div>
               </div>

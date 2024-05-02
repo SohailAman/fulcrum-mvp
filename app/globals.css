@@ -14,7 +14,7 @@
   @apply !hidden cursor-none;
 }
 .range-slider.multi-range-slider .ruler .ruler-rule:nth-child(n + 1) {
-  @apply !border-b-0 !border-[#bfbfbf] !py-1;
+  @apply !border-b-0 !border-[#bfbfbf] !py-0.5;
 }
 
 .range-slider.multi-range-slider .bar {
@@ -27,10 +27,10 @@
 }
 
 .range-slider.multi-range-slider .label {
-  @apply !border-0 !text-[10px] !text-[#bfbfbf];
+  @apply !border-0 !text-[8px] !text-[#bfbfbf];
 }
 .range-slider.multi-range-slider .labels {
-  @apply !border-0 !text-[10px] !text-[#bfbfbf];
+  @apply !border-0 !text-[8px] !text-[#bfbfbf] !mt-2;
 }
 
 .range-slider.multi-range-slider .label:first-child {
