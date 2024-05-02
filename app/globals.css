@@ -2,32 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.custom-container {
+  @apply mx-auto max-w-7xl w-full;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.radar-chart svg {
+  @apply max-lg:overflow-visible;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.range-slider.range-slider.single .thumb.thumb-left {
+  @apply !hidden cursor-none;
+}
+.range-slider.multi-range-slider .ruler .ruler-rule:nth-child(n + 1) {
+  @apply !border-b-0 !border-[#bfbfbf] !py-1;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.range-slider.multi-range-slider .bar {
+  @apply !h-1 p-0;
+}
+
+.range-slider.multi-range-slider .bar-left,
+.range-slider.multi-range-slider .bar-right {
+  @apply !border-0 !shadow-none !h-1 !p-0;
+}
+
+.range-slider.multi-range-slider .label {
+  @apply !border-0 !text-[10px] !text-[#bfbfbf];
+}
+.range-slider.multi-range-slider .labels {
+  @apply !border-0 !text-[10px] !text-[#bfbfbf];
+}
+
+.range-slider.multi-range-slider .label:first-child {
+  @apply !-ml-0.5;
+}
+
+.range-slider.multi-range-slider .label:last-child {
+  @apply !-mr-1;
+}
+
+.range-slider.multi-range-slider .thumb::before {
+  @apply !border-0 !size-5 !shadow-none !bg-[url(/assets/svgs/knob.svg)] bg-cover bg-no-repeat;
+}
+
+.range-slider.multi-range-slider .bar-inner {
+  @apply !border-0 !shadow-none;
+}
+
+.range-slider.multi-range-slider .thumb .caption {
+  @apply !-left-0.5 !bottom-7;
+}
+
+.range-slider.multi-range-slider .thumb .caption span::before {
+  @apply !content-[''] !absolute !bg-[#32A6F9] !w-[6px] !h-[6px] !bottom-[-3px] !rotate-45 !left-1/2 !-translate-x-1/2;
+}
+
+.range-slider.multi-range-slider .thumb .caption * {
+  @apply !bg-[#32A6F9] !w-[26px] !h-[20px] !rounded-md !shadow-none !text-[12px] !flex !items-center !justify-center !p-0 !min-h-fit;
 }

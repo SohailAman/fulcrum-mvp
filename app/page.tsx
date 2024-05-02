@@ -1,113 +1,250 @@
 import Image from "next/image";
+import { MarketOverviewCard, RatingsAnalysisCard } from "./components";
+import {
+  marketOverviewData,
+  ratingsAnalysisData,
+  regulatoryInsightData,
+} from "./constants/HomepageContent";
 
-export default function Home() {
+const Home = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main>
+      {/* Hero */}
+      <div className="bg-white py-20">
+        <div className="max-w-[960px] max-lg:px-8 mx-auto w-full text-center">
+          <h6 className="text-[16px] text-blue-600 font-[600] leading-[150%] mb-3">
+            Welcome to Fulcrum4
+          </h6>
+          <h1 className="lg:text-[48px] text-[32px] text-gray-900 font-[600] leading-[125%] tracking-[-0.96px] mb-[20px]">
+            Your Trusted Partner in Navigating the Blockchain Rating Landscape
+          </h1>
         </div>
       </div>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="custom-container lg:px-8 px-6 lg:py-20 py-10 flex flex-col lg:gap-16 gap-6">
+        <div className="flex flex-col gap-5">
+          <h2 className="lg:text-[36px] text-[24px] font-semibold leading-[122.222%] text-gray-900">
+            Market Overview
+          </h2>
+          <p className="lg:text-[20px] text-[16px] text-gray-500 leading-[150%] font-[400]">
+            Snapshot of Current Trends and Performance in the Blockchain Space
+          </p>
+        </div>
+        <div className="flex gap-8 justify-center max-xl:flex-wrap">
+          {marketOverviewData.map((market, index) => (
+            <MarketOverviewCard
+              data={market}
+              key={index}
+              className="max-w-[386px]"
+            />
+          ))}
+        </div>
+        <button className="w-auto lg:ms-auto max-lg:mx-auto bg-[#1D2353] px-[20px] py-[12px] rounded-lg shadow-dull text-[16px] font-semibold leading-[150%] text-white">
+          View all posts
+        </button>
       </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
+      {/* cards */}
+      <div className="custom-container lg:px-8 flex max-lg:flex-col gap-10">
+        {/* left */}
+        <div className="lg:max-w-[452px] max-lg:px-6 w-full lg:py-24 py-10 relative">
+          <span className="absolute bottom-0 left-[-120px] h-full lg:w-[calc(100%+122px)] w-full bg-white -z-10" />
+          <h3 className="lg:text-[36px] text-[24px] text-gray-900 font-semibold leading-[122%] tracking-[-0.72px] mb-5">
+            Latest Rating Actions
+          </h3>
+          <p className="lg:text-[20px] text=[16px] text-gray-500 leading-[150%] font-[400]">
+            Recent Developments and Updates on Blockchain Asset Ratings
           </p>
-        </a>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+          <div className="flex flex-col w-full mt-10 gap-6">
+            {/* card */}
+            <div className="border border-gray-200 rounded-2xl p-6 flex flex-col gap-2">
+              <div className="flex items-center gap-1.5 w-full">
+                <span className="relative size-[28px]">
+                  <Image
+                    src={"/assets/images/blockchain1.png"}
+                    alt="icon"
+                    fill
+                    sizes="auto"
+                  />
+                </span>
+                <h6 className="text-[18px] font-medium leading-[155%] text-gray-900">
+                  DeFiCredit Inc.
+                </h6>
+              </div>
+              <p className="text-[16px] text-gray-500 leading-[150%] font-[400] w-full">
+                Upgraded from FA2 to FA1
+              </p>
+            </div>
+            {/* card */}
+            <div className="border border-gray-200 rounded-2xl p-6 flex flex-col gap-2">
+              <div className="flex items-center gap-1.5 w-full">
+                <span className="relative size-[28px]">
+                  <Image
+                    src={"/assets/images/blockchain2.png"}
+                    alt="icon"
+                    fill
+                    sizes="auto"
+                  />
+                </span>
+                <h6 className="text-[18px] font-medium leading-[155%] text-gray-900">
+                  RealToken Realty
+                </h6>
+              </div>
+              <p className="text-[16px] text-gray-500 leading-[150%] font-[400] w-full">
+                Downgraded from FRWA2 to FRWCA3
+              </p>
+            </div>
+            {/* card */}
+            <div className="border border-gray-200 rounded-2xl p-6 flex flex-col gap-2">
+              <div className="flex items-center gap-1.5 w-full">
+                <span className="relative size-[28px]">
+                  <Image
+                    src={"/assets/images/blockchain3.png"}
+                    alt="icon"
+                    fill
+                    sizes="auto"
+                  />
+                </span>
+                <h6 className="text-[18px] font-medium leading-[155%] text-gray-900">
+                  ChainBond Ltd
+                </h6>
+              </div>
+              <p className="text-[16px] text-gray-500 leading-[150%] font-[400] w-full">
+                Affirmed at FP1 with a revised positive outlook
+              </p>
+            </div>
+          </div>
+        </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+        <div className="lg:max-w-[836px] max-lg:px-6 justify-center w-full flex flex-col gap-10 lg:pl-8 lg:py-24 py-10">
+          <div className="w-full max-w-[693px] max-lg:mx-auto flex flex-col gap-5">
+            <h3 className="lg:text-[36px] text-[24px] text-gray-900 font-semibold leading-[122%] tracking-[-0.72px]">
+              Ratings and Analysis Section
+            </h3>
+            <p className="lg:text-[20px] text=[16px] text-gray-500 leading-[150%] font-[400]">
+              In-depth Evaluations and Expert Insights Across Blockchain Sectors
+            </p>
+          </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+          <div className="flex gap-4 justify-center flex-wrap max-w-[693px] mx-auto w-full">
+            <RatingsAnalysisCard
+              data={ratingsAnalysisData[0]}
+              className="md:max-w-[245px] w-full pl-6 pr-[23px] pt-[23px]"
+              imageClassName="-bottom-12 right-0 h-[246px] w-[246px]"
+            />
+            <RatingsAnalysisCard
+              data={ratingsAnalysisData[1]}
+              className="md:max-w-[428px] w-full pl-6 pr-[102px] pt-[23px]"
+              imageClassName="-bottom-10 right-0 h-[169px] w-[165px]"
+            />
+            <RatingsAnalysisCard
+              data={ratingsAnalysisData[2]}
+              className="md:max-w-[186px] w-full pl-6 pr-[9px] pt-[23px]"
+              imageClassName="-bottom-8 right-0 h-[126px] w-[126px]"
+            />
+            <RatingsAnalysisCard
+              data={ratingsAnalysisData[3]}
+              className="md:max-w-[287px] w-full pl-6 pr-[14px] pt-[23px]"
+              imageClassName="-bottom-9 right-0 h-[152px] w-[156px]"
+            />
+            <RatingsAnalysisCard
+              data={ratingsAnalysisData[4]}
+              className="md:max-w-[186px] w-full pl-6 pr-[17px] pt-[23px]"
+              imageClassName="-bottom-5 right-0 h-[114px] w-[136px]"
+            />
+          </div>
+        </div>
+      </div>
+      {/* bg */}
+      <div className="bg-[#1D2353]">
+        <div className="custom-container lg:px-8 px-6 py-20 flex flex-wrap gap-16">
+          <div className="max-w-[362px] w-full flex flex-col gap-3">
+            <h5 className="text-[16px] font-semibold leading-[150%] text-[#E1E4FE]">
+              Sector Panels
+            </h5>
+            <h1 className="lg:text-[36px] text-[24px] font-semibold leading-[122%] tracking-[-0.72px] text-white">
+              Deep Dives into Key Blockchain Sectors
+            </h1>
+          </div>
+
+          <div className="max-w-[363px] w-full flex flex-col lg:gap-8 gap-6">
+            <div className="w-full flex flex-col gap-3">
+              <h5 className="text-[20px] font-semibold leading-[150%] text-[#fff]">
+                Decentralized Finance (DeFi)
+              </h5>
+              <h1 className="text-[16px] font-normal leading-[150%] text-[#E1E4FE]">
+                Reviews of yield farming protocols and AMMs
+              </h1>
+            </div>
+            <div className="w-full flex flex-col gap-3">
+              <h5 className="text-[20px] font-semibold leading-[150%] text-[#fff]">
+                Infrastructure
+              </h5>
+              <h1 className="text-[16px] font-normal leading-[150%] text-[#E1E4FE]">
+                Detailed assessments of blockchain layers and interoperability
+                protocols
+              </h1>
+            </div>
+          </div>
+
+          <div className="max-w-[363px] w-full flex flex-col gap-8">
+            <div className="w-full flex flex-col gap-3">
+              <h5 className="text-[20px] font-semibold leading-[150%] text-[#fff]">
+                Non-Fungible Tokens (NFT)
+              </h5>
+              <h1 className="text-[16px] font-normal leading-[150%] text-[#E1E4FE]">
+                Analyses of the burgeoning NFT marketplace
+              </h1>
+            </div>
+            <div className="w-full flex flex-col gap-3">
+              <h5 className="text-[20px] font-semibold leading-[150%] text-[#fff]">
+                Stable coins
+              </h5>
+              <h1 className="text-[16px] font-normal leading-[150%] text-[#E1E4FE]">
+                In-depth analysis of various types of stable coins
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* === */}
+      <div className="custom-container lg:px-8 px-6 py-20 flex flex-col lg:gap-16 gap-8">
+        <div className="max-w-[768px] mx-auto w-full flex justify-center items-center flex-col lg:gap-5 gap-2 text-center">
+          <h2 className="lg:text-[36px] text-[24px] max-lg:max-w-[768px] max-lg:mx-auto w-full font-semibold leading-[122.222%] text-gray-900">
+            Regulatory Insight Panels
           </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+          <p className="lg:text-[20px] text=[16px] text-gray-500 leading-[150%] font-[400]">
+            Comprehensive Analysis of Global Regulatory Changes and Their Impact
+            on Blockchain Assets
           </p>
-        </a>
+        </div>
+
+        <div className="flex lg:gap-8 gap6 flex-wrap justify-center">
+          {regulatoryInsightData.map((data, index) => (
+            <div
+              className="w-full max-w-[384px] flex flex-col items-center text-center"
+              key={index}
+            >
+              <div className="size-12 flex items-center justify-center rounded-full bg-[#EBEEFF] border-8 border-[#F5F5FF]">
+                <Image
+                  src={data.icon}
+                  alt="icon"
+                  height={24}
+                  width={24}
+                  sizes="auto"
+                />
+              </div>
+              <h5 className="lg:text-[20px] text-[16px] font-semibold leading-[150%] text-gray-900 mt-5 mb-2">
+                {data.title}
+              </h5>
+              <h1 className="lg:text-[16px] text-[14px] font-normal leading-[150%] text-gray-500">
+                {data.description}
+              </h1>
+            </div>
+          ))}
+        </div>
       </div>
     </main>
   );
-}
+};
+export default Home;
