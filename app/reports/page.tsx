@@ -21,7 +21,7 @@ import {
 
 const Reports = () => {
   return (
-    <>
+    <main className="overflow-x-hidden w-screen">
       {/* Hero */}
       <div className="custom-container lg:px-8 mb-6 md:mt-6">
         <div className="h-[120px] w-full relative">
@@ -220,7 +220,7 @@ const Reports = () => {
           </div>
         </div>
       </div>
-    </>
+    </main>
   );
 };
 
