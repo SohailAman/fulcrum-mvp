@@ -1,9 +1,11 @@
 "use client";
 
-import React from "react";
-import { ProgressBar } from "../common/ProgressBar/ProgressBar";
-import { RadarChart } from "./RadarChart";
 import { seriesCaparison } from "@/app/constants/ReportPageContent";
+import { ProgressBar } from "../common/ProgressBar/ProgressBar";
+import dynamic from "next/dynamic";
+const RadarChart = dynamic(() => import("./RadarChart"), {
+  ssr: false,
+});
 
 const SectorChart = () => {
   return (

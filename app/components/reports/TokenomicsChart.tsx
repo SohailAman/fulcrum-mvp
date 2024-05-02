@@ -1,8 +1,10 @@
 "use client";
 
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
-import { ReportChart } from "./ReportChart";
-
+import dynamic from "next/dynamic";
+const ReportChart = dynamic(() => import("./ReportChart"), {
+  ssr: false,
+});
 const TokenomicsChart = () => {
   return (
     <div className="flex-1 flex-col flex gap-6 p-4 border border-gray-200 rounded-lg bg-white">

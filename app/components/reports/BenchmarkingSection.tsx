@@ -2,9 +2,12 @@
 
 import { seriesCaparison } from "@/app/constants/ReportPageContent";
 import { CheckIcon, MinusIcon } from "@heroicons/react/24/outline";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { ProgressBar } from "../common/ProgressBar/ProgressBar";
-import { RadarChart } from "./RadarChart";
+const RadarChart = dynamic(() => import("./RadarChart"), {
+  ssr: false,
+});
 
 const BenchmarkingSection = () => {
   return (

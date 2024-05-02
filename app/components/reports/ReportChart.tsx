@@ -45,7 +45,7 @@ interface ChartProps {
 }
 
 // LineChart component using ApexCharts for line chart
-export const ReportChart: FC<ChartProps> = ({
+const ReportChart: FC<ChartProps> = ({
   type,
   series,
   strokeWidth = 2,
@@ -193,3 +193,5 @@ export const ReportChart: FC<ChartProps> = ({
     </div>
   );
 };
+
+export default ReportChart;

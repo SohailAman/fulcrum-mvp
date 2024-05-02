@@ -17,7 +17,7 @@ interface ChartProps {
 }
 
 // LineChart component using ApexCharts for line chart
-export const RadarChart: FC<ChartProps> = ({
+const RadarChart: FC<ChartProps> = ({
   series,
   chartHeading = "",
   className = "",
@@ -142,3 +142,5 @@ export const RadarChart: FC<ChartProps> = ({
     </div>
   );
 };
+
+export default RadarChart;

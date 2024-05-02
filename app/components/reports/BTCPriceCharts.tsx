@@ -3,7 +3,10 @@ import {
   ArrowUpIcon,
   InformationCircleIcon,
 } from "@heroicons/react/24/outline";
-import { ReportChart } from "./ReportChart";
+import dynamic from "next/dynamic";
+const ReportChart = dynamic(() => import("./ReportChart"), {
+  ssr: false,
+});
 
 const BTCPriceCharts = () => {
   return (
