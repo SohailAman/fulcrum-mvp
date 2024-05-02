@@ -35,6 +35,8 @@ const RangeSliders = () => {
           abc
         </span>
         <MultiRangeSlider
+          id="1"
+          key="1"
           className="!p-0 !border-0 !shadow-none mt-2.5 h-[33px] range-slider single"
           barInnerColor="#32A6F9"
           thumbLeftColor="transparent"
@@ -43,7 +45,7 @@ const RangeSliders = () => {
           min={0}
           max={10}
           step={1}
-          labels={["1", "", "3", "", "5", "", "6", "", "8", "", "10"]}
+          labels={["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
           minValue={0}
           maxValue={values.maxValue}
           onInput={(e) => {
@@ -56,6 +58,8 @@ const RangeSliders = () => {
           abc
         </span>
         <MultiRangeSlider
+          id="2"
+          key="2"
           className="!p-0 !border-0 !shadow-none mt-2.5 h-[33px] range-slider"
           barInnerColor="#32A6F9"
           thumbLeftColor="#FFFFFF"
@@ -63,7 +67,7 @@ const RangeSliders = () => {
           min={0}
           max={10}
           step={1}
-          labels={["1", "", "3", "", "5", "", "6", "", "8", "", "10"]}
+          labels={["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
           minValue={values2.minValue}
           maxValue={values2.maxValue}
           onInput={(e) => {
@@ -76,6 +80,8 @@ const RangeSliders = () => {
           abc
         </span>
         <MultiRangeSlider
+          id="3"
+          key="3"
           className="!p-0 !border-0 !shadow-none mt-2.5 h-[33px] range-slider"
           barInnerColor="#32A6F9"
           thumbLeftColor="#FFFFFF"
@@ -83,7 +89,7 @@ const RangeSliders = () => {
           min={0}
           max={10}
           step={1}
-          labels={["1", "", "3", "", "5", "", "6", "", "8", "", "10"]}
+          labels={["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
           minValue={values3.minValue}
           maxValue={values3.maxValue}
           onInput={(e) => {

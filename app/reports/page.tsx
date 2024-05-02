@@ -1,29 +1,24 @@
-import {
-  ArrowUpIcon,
-  MagnifyingGlassIcon,
-  MinusIcon,
-} from "@heroicons/react/16/solid";
+"use client";
+
+import { MagnifyingGlassIcon } from "@heroicons/react/16/solid";
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
-import { CheckIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import {
   Accordions,
   AnalysisCard,
+  BTCPriceCharts,
+  BenchmarkingSection,
   MarketCard,
   OverviewCard,
-  ProgressBar,
-  RadarChart,
   RangeSliders,
-  ReportChart,
+  SectorChart,
+  TokenomicsChart,
 } from "../components";
 import ReportsSidebar from "../components/reports/ReportsSidebar";
 import {
   marketDemands,
   overviewData,
   scenarioAnalysis,
-  seriesCaparison,
-  seriesIndex,
-  seriesPrice,
 } from "../constants/ReportPageContent";
 
 const Reports = () => {
@@ -35,12 +30,16 @@ const Reports = () => {
           <Image
             src={"/assets/images/home-hero.png"}
             className="object-cover max-md:hidden"
+            sizes="auto"
             fill
+            priority
             alt="hero"
           />
           <Image
             src={"/assets/images/hero-small.png"}
             className="object-cover md:hidden"
+            sizes="auto"
+            priority
             fill
             alt="hero"
           />
@@ -89,7 +88,12 @@ const Reports = () => {
             </div>
             <button className="inline-flex sm:px-4 sm:py-2.5 py-2 px-3 items-center gap-x-1 text-[14px] font-semibold text-gray-700 leading-[142%] border rounded-[8px] border-[#D0D5DD]">
               <div className="size-5 relative">
-                <Image src={"/assets/svgs/filter.svg"} alt="filter" fill />
+                <Image
+                  src={"/assets/svgs/filter.svg"}
+                  alt="filter"
+                  sizes="auto"
+                  fill
+                />
               </div>
               <span>Filters</span>
             </button>
@@ -109,209 +113,17 @@ const Reports = () => {
           {/* ==== */}
           <div className="flex gap-4 w-full flex-col">
             {/* charts */}
-            <div className="flex lg:flex-1 max-lg:w-full max-lg:flex-col flex-wrap w-full gap-4">
-              {/* chart */}
-              <div className="border lg:flex-1 max-lg:w-full border-gray-200 rounded-lg pt-4 px-2 bg-white">
-                <h4 className="ml-6 -mb-2.5 mr-4 text-[14px] leading-[200%] font-[500] text-gray-900 pb-5 border-b border-b-gray-200">
-                  BTC Price
-                </h4>
-                <ReportChart
-                  legend
-                  series={seriesPrice}
-                  chartHeading={""}
-                  categories={[
-                    "",
-                    "Jan",
-                    "Feb",
-                    "Mar",
-                    "Apr",
-                    "May",
-                    "Jun",
-                    "Jul",
-                    "Aug",
-                    "Sep",
-                    "Oct",
-                    "Nov",
-                    "Dec",
-                    "",
-                  ]}
-                />
-              </div>
-              {/* chart */}
-              <div className="border border-gray-200 rounded-lg pt-4 lg:max-w-[231px] min-w-[231px] w-full flex flex-col justify-between bg-white">
-                <div className="px-4">
-                  <div className="flex items-center gap-2 mb-6">
-                    <h5 className="text-[14px] text-gray-600 font-[500] leading-[171%] flex-1">
-                      Cryptocurrency Index
-                    </h5>
-                    <InformationCircleIcon className="text-[14px] size-[20px] text-gray-600" />
-                  </div>
-                  <h2 className="text-[36px] text-gray-900 font-[600] leading-[122%]">
-                    3.54
-                  </h2>
-                  <div className="flex gap-2">
-                    <span className="flex gap-1 items-center">
-                      <ArrowUpIcon className="text-[16px] size-[16px] text-green-700" />
-                      <span className="text-[14px] font-[500] leading-[142%] text-green-700">
-                        40%
-                      </span>
-                    </span>
-                    <p className="text-[14px] font-[500] leading-[142%] text-gray-500">
-                      vs last month
-                    </p>
-                  </div>
-                </div>
 
-                <ReportChart
-                  legend
-                  height={135}
-                  stepSize={25}
-                  maxStep={110}
-                  labels={false}
-                  axisBorder={false}
-                  grid={false}
-                  markerColor={["#12b76a"]}
-                  categories={["abc", "abc", "abc", "abc"]}
-                  series={seriesIndex}
-                  gradientStops={[0, 100]}
-                />
-              </div>
-            </div>
+            <BTCPriceCharts />
+
             {/* Chart */}
-            <div className="p-4 border border-gray-200 rounded-lg pt-4 w-full flex flex-wrap bg-white">
-              {/* progress */}
-              <div className="lg:max-w-[373.73px] w-full">
-                <h5 className="text-[15px] text-[#171725] font-[600] leading-[133%] lg:flex-1 max-lg:w-full">
-                  Sector Comparison
-                </h5>
-                <p className="text-[12px] font-medium leading-[133%] text-[#999]">
-                  Lorem ipsum dolor sit amet
-                </p>
-
-                <div className="flex flex-col gap-6 mt-14 pb-12 px-5">
-                  {/* Progress */}
-                  <div className="flex flex-col gap-4">
-                    <div className="flex items-center justify-between">
-                      <span className="flex items-center gap-2">
-                        <span className="bg-[#06F] rounded-full w-[9px] h-[6px] block" />
-                        <p className="text-[12px] font-medium leading-[133%]">
-                          Legend 1
-                        </p>
-                      </span>
-                      <p className="text-[12px] font-medium leading-[133%]">
-                        35%
-                      </p>
-                    </div>
-                    <ProgressBar
-                      backgroundColor="#EFEFFF"
-                      color="#06F"
-                      height="4.993px"
-                      progress={35}
-                    />
-                  </div>
-                  {/* Progress */}
-                  <div className="flex flex-col gap-4">
-                    <div className="flex items-center justify-between">
-                      <span className="flex items-center gap-2">
-                        <span className="bg-[#96C0FF] rounded-full w-[9px] h-[6px] block" />
-                        <p className="text-[12px] font-medium leading-[133%]">
-                          Legend 2
-                        </p>
-                      </span>
-                      <p className="text-[12px] font-medium leading-[133%]">
-                        43%
-                      </p>
-                    </div>
-                    <ProgressBar
-                      backgroundColor="#EFEFFF"
-                      color="#96C0FF"
-                      height="4.993px"
-                      progress={43}
-                    />
-                  </div>
-                  {/* Progress */}
-                  <div className="flex flex-col gap-4">
-                    <div className="flex items-center justify-between">
-                      <span className="flex items-center gap-2">
-                        <span className="bg-[#CDD2FD] rounded-full w-[9px] h-[6px] block" />
-                        <p className="text-[12px] font-medium leading-[133%]">
-                          Legend 1
-                        </p>
-                      </span>
-                      <p className="text-[12px] font-medium leading-[133%]">
-                        75%
-                      </p>
-                    </div>
-                    <ProgressBar
-                      backgroundColor="#EFEFFF"
-                      color="#CDD2FD"
-                      height="4.993px"
-                      progress={75}
-                    />
-                  </div>
-                </div>
-              </div>
-              {/* Chart */}
-              <div className="relative lg:h-[431px] lg:max-w-[514px] lg:min-w-[514px] max-lg:h-[251px] max-lg:w-full lg:overflow-hidden">
-                <RadarChart
-                  className="max-lg:!scale-75"
-                  height={431}
-                  stepSize={5}
-                  maxStep={35}
-                  categories={["abc", "abc", "abc", "abc", "abc"]}
-                  series={seriesCaparison}
-                />
-              </div>
-            </div>
+            <SectorChart />
             {/**=======Mid Stack=====  */}
             <div className="w-full flex max-lg:flex-col gap-4">
               {/* -----leftPart----------- */}
               <div className="lg:max-w-[293px] w-full flex flex-col gap-4">
                 {/* Chart */}
-                <div className="flex-1 flex-col flex gap-6 p-4 border border-gray-200 rounded-lg bg-white">
-                  <div className="flex-1 flex items-center gap-2">
-                    <h5 className="text-[14px] text-gray-600 font-[500] leading-[171%] flex-1">
-                      Tokenomics
-                    </h5>
-                    <InformationCircleIcon className="text-[14px] size-[20px] text-gray-600" />
-                  </div>
-                  <ReportChart
-                    type="donut"
-                    legend
-                    width={261}
-                    height={292}
-                    labels={false}
-                    axisBorder={false}
-                    grid={false}
-                    markerColor={[
-                      "#F94144",
-                      "#F3722C",
-                      "#F8961E",
-                      "#F9C74F",
-                      "#90BE6D",
-                    ]}
-                    fillColors={[
-                      "#F94144",
-                      "#F3722C",
-                      "#F8961E",
-                      "#F9C74F",
-                      "#90BE6D",
-                    ]}
-                    categoryLabels
-                    categories={[
-                      "product 1",
-                      "product 2",
-                      "product 3",
-                      "product 4",
-                      "product 5",
-                    ]}
-                    offsetY={0}
-                    strokeWidth={0}
-                    series={[44, 55, 41, 17, 15]}
-                    legendPosition="bottom"
-                    horizontalAlign="left"
-                  />
-                </div>
+                <TokenomicsChart />
                 {/* accordions */}
                 <div className="flex-1 flex-col flex p-4 border border-gray-200 rounded-lg bg-white">
                   <div className="flex-1 flex items-center gap-2 mb-6">
@@ -343,6 +155,7 @@ const Reports = () => {
                   <Image
                     src={"/assets/svgs/technology-stack.svg"}
                     alt="technology-stack"
+                    sizes="auto"
                     fill
                     loading="lazy"
                   />
@@ -351,6 +164,7 @@ const Reports = () => {
                   <Image
                     src={"/assets/svgs/stack-map-sm.svg"}
                     alt="technology-stack"
+                    sizes="auto"
                     fill
                     loading="lazy"
                   />
@@ -374,285 +188,14 @@ const Reports = () => {
                   alt="world-map"
                   className="md:scale-[1.15] block md:!inset-y-5"
                   fill
+                  priority
                   sizes="auto"
-                  loading="lazy"
                 />
               </div>
             </div>
 
             {/*  Benchmarking Tool */}
-            <div className="p-4 border border-gray-200 rounded-lg w-full flex-col flex lg:flex-col items-center xl:items-stretch xl:flex-row justify-center xl:justify-between bg-white xl:max-h-[366px] lg:overflow-y-hidden max-lg:gap-4">
-              <div className="lg:max-w-[321px] w-full">
-                <h5 className="text-[15px] text-[#171725] font-[600] leading-[133%] flex-1">
-                  Benchmarking Tool
-                </h5>
-                <p className="text-[12px] font-medium leading-[133%] text-[#999]">
-                  Choose Companies to compare in the Radar
-                </p>
-
-                <ul className="list-none p-0 m-0 border-gray-200 border block mt-2">
-                  {/* Head */}
-                  <label
-                    className="relative flex items-center gap-2 p-2 cursor-pointer bg-gray-50 border-b border-b-gray-200"
-                    htmlFor="custom"
-                  >
-                    <input
-                      type="checkbox"
-                      className="peer relative appearance-none"
-                      id="custom"
-                      defaultChecked
-                    />
-                    <span className="flex items-center justify-center relative size-[13.7px] rounded-[4px] border border-[#D0D5DD] peer-checked:border-purple-600  text-transparent peer-checked:text-purple-600">
-                      <MinusIcon className="text-inherit text-[9.35px]" />
-                    </span>
-                    Company
-                  </label>
-                  {/* Item */}
-                  <li>
-                    <label
-                      className="relative flex items-center gap-2 px-2 py-2.5 cursor-pointer border-b border-b-gray-200"
-                      htmlFor="custom"
-                    >
-                      <input
-                        type="checkbox"
-                        className="peer relative appearance-none"
-                        id="custom"
-                        defaultChecked
-                      />
-                      <span className="flex items-center justify-center relative size-[13.7px] rounded-[4px] border border-[#D0D5DD] peer-checked:border-purple-600  text-transparent peer-checked:text-purple-600">
-                        <CheckIcon className="text-inherit text-[9.35px] size-[9.35px]" />
-                      </span>
-                      <div className="flex items-center gap-2">
-                        <Image
-                          src={"/assets/images/placeholder-icon.png"}
-                          alt="icon"
-                          width={27.413}
-                          height={27.413}
-                          className="rounded-full"
-                        />
-                        <span>
-                          <p className="text-[9.595px] font-[600] leading-[142.857%] text-gray-900">
-                            Loreum
-                          </p>
-                          <p className="text-[9.595px] font-[500] leading-[142.857%] text-gray-500">
-                            Loreum
-                          </p>
-                        </span>
-                      </div>
-                    </label>
-                  </li>
-                  {/* Item */}
-                  <li>
-                    <label
-                      className="relative flex items-center gap-2 px-2 py-2.5 cursor-pointer border-b border-b-gray-200"
-                      htmlFor="custom"
-                    >
-                      <input
-                        type="checkbox"
-                        className="peer relative appearance-none"
-                        id="custom"
-                        defaultChecked
-                      />
-                      <span className="flex items-center justify-center relative size-[13.7px] rounded-[4px] border border-[#D0D5DD] peer-checked:border-purple-600  text-transparent peer-checked:text-purple-600">
-                        <CheckIcon className="text-inherit text-[9.35px] size-[9.35px]" />
-                      </span>
-                      <div className="flex items-center gap-2">
-                        <Image
-                          src={"/assets/images/placeholder-icon.png"}
-                          alt="icon"
-                          width={27.413}
-                          height={27.413}
-                          className="rounded-full"
-                        />
-                        <span>
-                          <p className="text-[9.595px] font-[600] leading-[142.857%] text-gray-900">
-                            Loreum
-                          </p>
-                          <p className="text-[9.595px] font-[500] leading-[142.857%] text-gray-500">
-                            Loreum
-                          </p>
-                        </span>
-                      </div>
-                    </label>
-                  </li>
-                  {/* Item */}
-                  <li>
-                    <label
-                      className="relative flex items-center gap-2 px-2 py-2.5 cursor-pointer border-b border-b-gray-200"
-                      htmlFor="custom"
-                    >
-                      <input
-                        type="checkbox"
-                        className="peer relative appearance-none"
-                        id="custom"
-                        defaultChecked
-                      />
-                      <span className="flex items-center justify-center relative size-[13.7px] rounded-[4px] border border-[#D0D5DD] peer-checked:border-purple-600  text-transparent peer-checked:text-purple-600">
-                        <CheckIcon className="text-inherit text-[9.35px] size-[9.35px]" />
-                      </span>
-                      <div className="flex items-center gap-2">
-                        <Image
-                          src={"/assets/images/placeholder-icon.png"}
-                          alt="icon"
-                          width={27.413}
-                          height={27.413}
-                          className="rounded-full"
-                        />
-                        <span>
-                          <p className="text-[9.595px] font-[600] leading-[142.857%] text-gray-900">
-                            Loreum
-                          </p>
-                          <p className="text-[9.595px] font-[500] leading-[142.857%] text-gray-500">
-                            Loreum
-                          </p>
-                        </span>
-                      </div>
-                    </label>
-                  </li>
-                  {/* Item */}
-                  <li>
-                    <label
-                      className="relative flex items-center gap-2 px-2 py-2.5 cursor-pointer border-b border-b-gray-200"
-                      htmlFor="custom"
-                    >
-                      <input
-                        type="checkbox"
-                        className="peer relative appearance-none"
-                        id="custom"
-                      />
-                      <span className="flex items-center justify-center relative size-[13.7px] rounded-[4px] border border-[#D0D5DD] peer-checked:border-purple-600  text-transparent peer-checked:text-purple-600">
-                        <CheckIcon className="text-inherit text-[9.35px] size-[9.35px]" />
-                      </span>
-                      <div className="flex items-center gap-2">
-                        <Image
-                          src={"/assets/images/placeholder-icon.png"}
-                          alt="icon"
-                          width={27.413}
-                          height={27.413}
-                          className="rounded-full"
-                        />
-                        <span>
-                          <p className="text-[9.595px] font-[600] leading-[142.857%] text-gray-900">
-                            Loreum
-                          </p>
-                          <p className="text-[9.595px] font-[500] leading-[142.857%] text-gray-500">
-                            Loreum
-                          </p>
-                        </span>
-                      </div>
-                    </label>
-                  </li>
-                  {/* Item */}
-                  <li>
-                    <label
-                      className="relative flex items-center gap-2 px-2 py-2.5 cursor-pointer"
-                      htmlFor="custom"
-                    >
-                      <input
-                        type="checkbox"
-                        className="peer relative appearance-none"
-                        id="custom"
-                      />
-                      <span className="flex items-center justify-center relative size-[13.7px] rounded-[4px] border border-[#D0D5DD] peer-checked:border-purple-600  text-transparent peer-checked:text-purple-600">
-                        <CheckIcon className="text-inherit text-[9.35px] size-[9.35px]" />
-                      </span>
-                      <div className="flex items-center gap-2">
-                        <Image
-                          src={"/assets/images/placeholder-icon.png"}
-                          alt="icon"
-                          width={27.413}
-                          height={27.413}
-                          className="rounded-full"
-                        />
-                        <span>
-                          <p className="text-[9.595px] font-[600] leading-[142.857%] text-gray-900">
-                            Loreum
-                          </p>
-                          <p className="text-[9.595px] font-[500] leading-[142.857%] text-gray-500">
-                            Loreum
-                          </p>
-                        </span>
-                      </div>
-                    </label>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Chart */}
-              <div className="flex-1 lg:h-[386px] lg:max-w-[386px] md:min-w-[386px] max-lg:h-[251px] max-lg:w-full lg:overflow-hidden">
-                <RadarChart
-                  className={"lg:!scale-110 max-lg:!scale-75"}
-                  height={386}
-                  stepSize={5}
-                  maxStep={35}
-                  categories={["abc", "abc", "abc", "abc", "abc"]}
-                  series={seriesCaparison}
-                />
-              </div>
-
-              <div className="flex flex-col gap-10 lg:max-w-[195px] w-full mr-4">
-                {/* Progress */}
-                <div className="flex flex-col gap-4">
-                  <div className="flex items-center justify-between">
-                    <span className="flex items-center gap-2">
-                      <span className="bg-[#06F] rounded-full w-[9px] h-[6px] block" />
-                      <p className="text-[12px] font-medium leading-[133%]">
-                        Legend 1
-                      </p>
-                    </span>
-                    <p className="text-[12px] font-medium leading-[133%]">
-                      35%
-                    </p>
-                  </div>
-                  <ProgressBar
-                    backgroundColor="#EFEFFF"
-                    color="#06F"
-                    height="4.993px"
-                    progress={35}
-                  />
-                </div>
-                {/* Progress */}
-                <div className="flex flex-col gap-4">
-                  <div className="flex items-center justify-between">
-                    <span className="flex items-center gap-2">
-                      <span className="bg-[#96C0FF] rounded-full w-[9px] h-[6px] block" />
-                      <p className="text-[12px] font-medium leading-[133%]">
-                        Legend 2
-                      </p>
-                    </span>
-                    <p className="text-[12px] font-medium leading-[133%]">
-                      43%
-                    </p>
-                  </div>
-                  <ProgressBar
-                    backgroundColor="#EFEFFF"
-                    color="#96C0FF"
-                    height="4.993px"
-                    progress={43}
-                  />
-                </div>
-                {/* Progress */}
-                <div className="flex flex-col gap-4">
-                  <div className="flex items-center justify-between">
-                    <span className="flex items-center gap-2">
-                      <span className="bg-[#CDD2FD] rounded-full w-[9px] h-[6px] block" />
-                      <p className="text-[12px] font-medium leading-[133%]">
-                        Legend 1
-                      </p>
-                    </span>
-                    <p className="text-[12px] font-medium leading-[133%]">
-                      75%
-                    </p>
-                  </div>
-                  <ProgressBar
-                    backgroundColor="#EFEFFF"
-                    color="#CDD2FD"
-                    height="4.993px"
-                    progress={75}
-                  />
-                </div>
-              </div>
-            </div>
+            <BenchmarkingSection />
 
             {/* ----- */}
             <div className="p-4 pb-7 border border-gray-200 rounded-lg bg-white">

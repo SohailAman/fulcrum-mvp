@@ -1,5 +1,5 @@
 "use client";
-import ApexCharts from "apexcharts";
+
 import { FC } from "react";
 import Chart from "react-apexcharts";
 

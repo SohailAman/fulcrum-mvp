@@ -29,6 +29,10 @@
 .range-slider.multi-range-slider .label {
   @apply !border-0 !text-[8px] !text-[#bfbfbf];
 }
+
+.range-slider.multi-range-slider .label:nth-child(even) {
+  @apply invisible;
+}
 .range-slider.multi-range-slider .labels {
   @apply !border-0 !text-[8px] !text-[#bfbfbf] !mt-2;
 }

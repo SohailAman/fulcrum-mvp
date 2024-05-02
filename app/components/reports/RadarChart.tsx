@@ -1,6 +1,5 @@
 "use client";
 import { useDimensions } from "@/app/hooks/useDimensions";
-import ApexCharts from "apexcharts";
 import { FC, useEffect, useState } from "react";
 import Chart from "react-apexcharts";
 
