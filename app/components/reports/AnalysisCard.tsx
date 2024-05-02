@@ -18,7 +18,7 @@ const AnalysisCard: FC<Props> = ({ className, data }) => {
         <h5 className="text-[12px] text-gray-600 font-[500] leading-normal text-balance">
           {data.title}
         </h5>
-        <InformationCircleIcon className="text-[20px] size-[20px] text-gray-600" />
+        <InformationCircleIcon className="text-[20px] h-5 w-5 min-w-5 min-h-5 text-gray-600" />
       </div>
       <h5 className="text-[20px] text-[#191919] font-[600] leading-[150%]">
         {data.analysis}

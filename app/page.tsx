@@ -44,114 +44,117 @@ const Home = () => {
         </button>
       </div>
       {/* cards */}
-      <div className="custom-container lg:px-8 flex max-lg:flex-col gap-10">
-        {/* left */}
-        <div className="lg:max-w-[452px] max-lg:px-6 w-full lg:py-24 py-10 relative">
-          <span className="absolute bottom-0 left-[-120px] h-full lg:w-[calc(100%+122px)] w-full bg-white -z-10" />
-          <h3 className="lg:text-[36px] text-[24px] text-gray-900 font-semibold leading-[122%] tracking-[-0.72px] mb-5">
-            Latest Rating Actions
-          </h3>
-          <p className="lg:text-[20px] text=[16px] text-gray-500 leading-[150%] font-[400]">
-            Recent Developments and Updates on Blockchain Asset Ratings
-          </p>
-
-          <div className="flex flex-col w-full mt-10 gap-6">
-            {/* card */}
-            <div className="border border-gray-200 rounded-2xl p-6 flex flex-col gap-2">
-              <div className="flex items-center gap-1.5 w-full">
-                <span className="relative size-[28px]">
-                  <Image
-                    src={"/assets/images/blockchain1.png"}
-                    alt="icon"
-                    fill
-                    sizes="auto"
-                  />
-                </span>
-                <h6 className="text-[18px] font-medium leading-[155%] text-gray-900">
-                  DeFiCredit Inc.
-                </h6>
-              </div>
-              <p className="text-[16px] text-gray-500 leading-[150%] font-[400] w-full">
-                Upgraded from FA2 to FA1
-              </p>
-            </div>
-            {/* card */}
-            <div className="border border-gray-200 rounded-2xl p-6 flex flex-col gap-2">
-              <div className="flex items-center gap-1.5 w-full">
-                <span className="relative size-[28px]">
-                  <Image
-                    src={"/assets/images/blockchain2.png"}
-                    alt="icon"
-                    fill
-                    sizes="auto"
-                  />
-                </span>
-                <h6 className="text-[18px] font-medium leading-[155%] text-gray-900">
-                  RealToken Realty
-                </h6>
-              </div>
-              <p className="text-[16px] text-gray-500 leading-[150%] font-[400] w-full">
-                Downgraded from FRWA2 to FRWCA3
-              </p>
-            </div>
-            {/* card */}
-            <div className="border border-gray-200 rounded-2xl p-6 flex flex-col gap-2">
-              <div className="flex items-center gap-1.5 w-full">
-                <span className="relative size-[28px]">
-                  <Image
-                    src={"/assets/images/blockchain3.png"}
-                    alt="icon"
-                    fill
-                    sizes="auto"
-                  />
-                </span>
-                <h6 className="text-[18px] font-medium leading-[155%] text-gray-900">
-                  ChainBond Ltd
-                </h6>
-              </div>
-              <p className="text-[16px] text-gray-500 leading-[150%] font-[400] w-full">
-                Affirmed at FP1 with a revised positive outlook
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="lg:max-w-[836px] max-lg:px-6 justify-center w-full flex flex-col gap-10 lg:pl-8 lg:py-24 py-10">
-          <div className="w-full max-w-[693px] max-lg:mx-auto flex flex-col gap-5">
-            <h3 className="lg:text-[36px] text-[24px] text-gray-900 font-semibold leading-[122%] tracking-[-0.72px]">
-              Ratings and Analysis Section
+      <div className="relative">
+        <span className="absolute bottom-0 left-[0] h-full xl:w-[41.9%] w-full bg-white -z-10" />
+        <div className="custom-container lg:px-8 flex max-xl:flex-col gap-10">
+          {/* left */}
+          <div className="xl:max-w-[452px] max-lg:px-6 w-full lg:pt-24 pt-10 xl:pb-10 relative">
+            <h3 className="lg:text-[36px] text-[24px] text-gray-900 font-semibold leading-[122%] tracking-[-0.72px] mb-5">
+              Latest Rating Actions
             </h3>
             <p className="lg:text-[20px] text=[16px] text-gray-500 leading-[150%] font-[400]">
-              In-depth Evaluations and Expert Insights Across Blockchain Sectors
+              Recent Developments and Updates on Blockchain Asset Ratings
             </p>
+
+            <div className="flex xl:flex-col flex-wrap w-full mt-10 gap-6">
+              {/* card */}
+              <div className="w-full border border-gray-200 rounded-2xl p-6 flex flex-col gap-2 max-w-[452px]">
+                <div className="flex items-center gap-1.5 w-full">
+                  <span className="relative size-[28px]">
+                    <Image
+                      src={"/assets/images/blockchain1.png"}
+                      alt="icon"
+                      fill
+                      sizes="auto"
+                    />
+                  </span>
+                  <h6 className="text-[18px] font-medium leading-[155%] text-gray-900">
+                    DeFiCredit Inc.
+                  </h6>
+                </div>
+                <p className="text-[16px] text-gray-500 leading-[150%] font-[400] w-full">
+                  Upgraded from FA2 to FA1
+                </p>
+              </div>
+              {/* card */}
+              <div className="w-full border border-gray-200 rounded-2xl p-6 flex flex-col gap-2 max-w-[452px]">
+                <div className="flex items-center gap-1.5 w-full">
+                  <span className="relative size-[28px]">
+                    <Image
+                      src={"/assets/images/blockchain2.png"}
+                      alt="icon"
+                      fill
+                      sizes="auto"
+                    />
+                  </span>
+                  <h6 className="text-[18px] font-medium leading-[155%] text-gray-900">
+                    RealToken Realty
+                  </h6>
+                </div>
+                <p className="text-[16px] text-gray-500 leading-[150%] font-[400] w-full">
+                  Downgraded from FRWA2 to FRWCA3
+                </p>
+              </div>
+              {/* card */}
+              <div className="w-full border border-gray-200 rounded-2xl p-6 flex flex-col gap-2 max-w-[452px]">
+                <div className="flex items-center gap-1.5 w-full">
+                  <span className="relative size-[28px]">
+                    <Image
+                      src={"/assets/images/blockchain3.png"}
+                      alt="icon"
+                      fill
+                      sizes="auto"
+                    />
+                  </span>
+                  <h6 className="text-[18px] font-medium leading-[155%] text-gray-900">
+                    ChainBond Ltd
+                  </h6>
+                </div>
+                <p className="text-[16px] text-gray-500 leading-[150%] font-[400] w-full">
+                  Affirmed at FP1 with a revised positive outlook
+                </p>
+              </div>
+            </div>
           </div>
 
-          <div className="flex gap-4 justify-center flex-wrap max-w-[693px] mx-auto w-full">
-            <RatingsAnalysisCard
-              data={ratingsAnalysisData[0]}
-              className="md:max-w-[245px] w-full pl-6 pr-[23px] pt-[23px]"
-              imageClassName="-bottom-12 right-0 h-[246px] w-[246px]"
-            />
-            <RatingsAnalysisCard
-              data={ratingsAnalysisData[1]}
-              className="md:max-w-[428px] w-full pl-6 pr-[102px] pt-[23px]"
-              imageClassName="-bottom-10 right-0 h-[169px] w-[165px]"
-            />
-            <RatingsAnalysisCard
-              data={ratingsAnalysisData[2]}
-              className="md:max-w-[186px] w-full pl-6 pr-[9px] pt-[23px]"
-              imageClassName="-bottom-8 right-0 h-[126px] w-[126px]"
-            />
-            <RatingsAnalysisCard
-              data={ratingsAnalysisData[3]}
-              className="md:max-w-[287px] w-full pl-6 pr-[14px] pt-[23px]"
-              imageClassName="-bottom-9 right-0 h-[152px] w-[156px]"
-            />
-            <RatingsAnalysisCard
-              data={ratingsAnalysisData[4]}
-              className="md:max-w-[186px] w-full pl-6 pr-[17px] pt-[23px]"
-              imageClassName="-bottom-5 right-0 h-[114px] w-[136px]"
-            />
+          <div className="xl:max-w-[836px] max-lg:px-6 justify-center w-full flex flex-col gap-10 lg:pl-8 xl:pt-24 lg:pb-24 pb-10">
+            <div className="w-full max-w-[693px] max-lg:mx-auto flex flex-col gap-5">
+              <h3 className="lg:text-[36px] text-[24px] text-gray-900 font-semibold leading-[122%] tracking-[-0.72px]">
+                Ratings and Analysis Section
+              </h3>
+              <p className="lg:text-[20px] text=[16px] text-gray-500 leading-[150%] font-[400]">
+                In-depth Evaluations and Expert Insights Across Blockchain
+                Sectors
+              </p>
+            </div>
+
+            <div className="flex gap-4 justify-center flex-wrap max-w-[693px] mx-auto w-full">
+              <RatingsAnalysisCard
+                data={ratingsAnalysisData[0]}
+                className="md:max-w-[245px] w-full pl-6 pr-[23px] pt-[23px]"
+                imageClassName="-bottom-12 right-0 h-[246px] w-[246px]"
+              />
+              <RatingsAnalysisCard
+                data={ratingsAnalysisData[1]}
+                className="md:max-w-[428px] w-full pl-6 pr-[102px] pt-[23px]"
+                imageClassName="-bottom-10 right-0 h-[169px] w-[165px]"
+              />
+              <RatingsAnalysisCard
+                data={ratingsAnalysisData[2]}
+                className="md:max-w-[186px] w-full pl-6 pr-[9px] pt-[23px]"
+                imageClassName="-bottom-8 right-0 h-[126px] w-[126px]"
+              />
+              <RatingsAnalysisCard
+                data={ratingsAnalysisData[3]}
+                className="md:max-w-[287px] w-full pl-6 pr-[14px] pt-[23px]"
+                imageClassName="-bottom-9 right-0 h-[152px] w-[156px]"
+              />
+              <RatingsAnalysisCard
+                data={ratingsAnalysisData[4]}
+                className="md:max-w-[186px] w-full pl-6 pr-[17px] pt-[23px]"
+                imageClassName="-bottom-5 right-0 h-[114px] w-[136px]"
+              />
+            </div>
           </div>
         </div>
       </div>
