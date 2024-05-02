@@ -1,5 +1,3 @@
-"use client";
-
 import { seriesCaparison } from "@/app/constants/ReportPageContent";
 import { CheckIcon, MinusIcon } from "@heroicons/react/24/outline";
 import dynamic from "next/dynamic";

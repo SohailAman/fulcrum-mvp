@@ -1,5 +1,3 @@
-"use client";
-
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import dynamic from "next/dynamic";
 const ReportChart = dynamic(() => import("./ReportChart"), {
