@@ -8,7 +8,7 @@ import {
 
 const Home = () => {
   return (
-    <main>
+    <main className="overflow-x-hidden w-screen">
       {/* Hero */}
       <div className="bg-white py-20">
         <div className="max-w-[960px] max-lg:px-8 mx-auto w-full text-center">
@@ -35,7 +35,7 @@ const Home = () => {
             <MarketOverviewCard
               data={market}
               key={index}
-              className="max-w-[386px]"
+              className="md:max-w-[386px]"
             />
           ))}
         </div>
@@ -45,10 +45,11 @@ const Home = () => {
       </div>
       {/* cards */}
       <div className="relative">
-        <span className="absolute bottom-0 left-[0] h-full xl:w-[41.9%] w-full bg-white -z-10" />
-        <div className="custom-container lg:px-8 flex max-xl:flex-col gap-10">
+        <span className="max-lg:hidden absolute bottom-0 left-[0] h-full xl:w-[41.9%] w-full bg-white -z-10 min-[1660px]:w-[43.6%]" />
+        <div className="custom-container lg:px-8 flex max-xl:flex-col xl:gap-10">
           {/* left */}
-          <div className="xl:max-w-[452px] max-lg:px-6 w-full lg:pt-24 pt-10 xl:pb-10 relative">
+          <div className="xl:max-w-[452px] max-lg:px-6 w-full lg:pt-24 py-10 relative">
+            <span className="xl:hidden absolute bottom-0 lg:-left-8 -left-6 h-full w-[calc(100%+68px)] bg-white -z-10" />
             <h3 className="lg:text-[36px] text-[24px] text-gray-900 font-semibold leading-[122%] tracking-[-0.72px] mb-5">
               Latest Rating Actions
             </h3>
@@ -56,9 +57,9 @@ const Home = () => {
               Recent Developments and Updates on Blockchain Asset Ratings
             </p>
 
-            <div className="flex xl:flex-col flex-wrap w-full mt-10 gap-6">
+            <div className="flex xl:flex-col max-lg:flex-col max-lg:items-center flex-wrap w-full mt-10 gap-6">
               {/* card */}
-              <div className="w-full border border-gray-200 rounded-2xl p-6 flex flex-col gap-2 max-w-[452px]">
+              <div className="w-full border border-gray-200 rounded-2xl p-6 flex flex-col gap-2 md:max-w-[452px]">
                 <div className="flex items-center gap-1.5 w-full">
                   <span className="relative size-[28px]">
                     <Image
@@ -77,7 +78,7 @@ const Home = () => {
                 </p>
               </div>
               {/* card */}
-              <div className="w-full border border-gray-200 rounded-2xl p-6 flex flex-col gap-2 max-w-[452px]">
+              <div className="w-full border border-gray-200 rounded-2xl p-6 flex flex-col gap-2 md:max-w-[452px]">
                 <div className="flex items-center gap-1.5 w-full">
                   <span className="relative size-[28px]">
                     <Image
@@ -96,7 +97,7 @@ const Home = () => {
                 </p>
               </div>
               {/* card */}
-              <div className="w-full border border-gray-200 rounded-2xl p-6 flex flex-col gap-2 max-w-[452px]">
+              <div className="w-full border border-gray-200 rounded-2xl p-6 flex flex-col gap-2 md:max-w-[452px]">
                 <div className="flex items-center gap-1.5 w-full">
                   <span className="relative size-[28px]">
                     <Image
@@ -117,7 +118,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="xl:max-w-[836px] max-lg:px-6 justify-center w-full flex flex-col gap-10 lg:pl-8 xl:pt-24 lg:pb-24 pb-10">
+          <div className="xl:max-w-[836px] max-lg:px-6 justify-center w-full flex flex-col gap-10 lg:pl-8 xl:pt-24 lg:pb-24 py-10">
             <div className="w-full max-w-[693px] max-lg:mx-auto flex flex-col gap-5">
               <h3 className="lg:text-[36px] text-[24px] text-gray-900 font-semibold leading-[122%] tracking-[-0.72px]">
                 Ratings and Analysis Section
