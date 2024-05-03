@@ -35,7 +35,7 @@ const sidebarItems: sidebarItemsType[] = [
 
 const ReportsSidebar = () => {
   return (
-    <div className="max-w-[312px] px-4 py-24 w-full sticky top-0 lg:block hidden">
+    <div className="w-[312px] px-4 py-24 !sticky top-0 max-lg:hidden">
       {sidebarItems.map((item, itemIndex) => (
         <React.Fragment key={itemIndex}>
           <h3 className="py-2 px-3 text-[16px] leading-[150%] font-[400] capitalize text-neutral-900">

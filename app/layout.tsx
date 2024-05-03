@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-[#FCFCFD]`}>
+      <body className={`${inter.className} bg-[#FCFCFD] overflow-x-hidden`}>
         <Navbar />
         <main className="pt-[72px]">{children}</main>
         <Footer />
