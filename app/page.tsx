@@ -213,7 +213,7 @@ const Home = () => {
       </div>
       {/* === */}
       <div className="custom-container lg:px-8 px-6 py-20 flex flex-col lg:gap-16 gap-8">
-        <div className="max-w-[768px] mx-auto w-full flex justify-center items-center flex-col lg:gap-5 gap-2 text-center">
+        <div className="max-w-[768px] mx-auto w-full flex justify-center items-center flex-col lg:gap-5 gap-2 md:text-center">
           <h2 className="lg:text-[36px] text-[24px] max-lg:max-w-[768px] max-lg:mx-auto w-full font-semibold leading-[122.222%] text-gray-900">
             Regulatory Insight Panels
           </h2>
@@ -223,10 +223,10 @@ const Home = () => {
           </p>
         </div>
 
-        <div className="flex lg:gap-8 gap6 flex-wrap justify-center">
+        <div className="flex lg:gap-8 gap-6 flex-wrap md:justify-center">
           {regulatoryInsightData.map((data, index) => (
             <div
-              className="w-full max-w-[384px] flex flex-col items-center text-center"
+              className="w-full max-w-[384px] flex flex-col md:items-center md:text-center"
               key={index}
             >
               <div className="size-12 flex items-center justify-center rounded-full bg-[#EBEEFF] border-8 border-[#F5F5FF]">
@@ -238,7 +238,7 @@ const Home = () => {
                   sizes="auto"
                 />
               </div>
-              <h5 className="lg:text-[20px] text-[16px] font-semibold leading-[150%] text-gray-900 mt-5 mb-2">
+              <h5 className="lg:text-[20px] text-[16px] font-semibold leading-[150%] text-gray-900 md:mt-5 mt-2 mb-2">
                 {data.title}
               </h5>
               <h1 className="lg:text-[16px] text-[14px] font-normal leading-[150%] text-gray-500">
